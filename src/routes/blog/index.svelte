@@ -36,23 +36,23 @@
 		});
 		const tags = new Set();
 		const categories = new Set();
-		posts.forEach(p => {
-			p.tags.forEach(t => tags.add(t));
-			p.categories.forEach(c => categories.add(c));
-		})
+		posts.forEach((p) => {
+			p.tags.forEach((t) => tags.add(t));
+			p.categories.forEach((c) => categories.add(c));
+		});
 		return {
 			props: {
 				posts,
 				tags,
-				categories,
+				categories
 			}
 		};
 	}
 </script>
 
 <script>
-import Counter from "$lib/Counter.svelte";
-import About from "../about.svelte";
+	import Counter from '$lib/Counter.svelte';
+	import About from '../about.svelte';
 
 	export let posts;
 	export let tags;
@@ -74,11 +74,11 @@ import About from "../about.svelte";
 <ul class="list-none">
 	{#each posts as { title, outline, slug, filename, tags, categories }}
 		<li style="list-style: none; border: black solid 1px; margin: 2px 0; padding: 0 4px">
-			<a class="text-blue-500 space-y-3" rel="prefetch" href="blog/{slug}">
-				<h2>
-					{title}
-				</h2>
-			</a>
+			<!-- <a class="text-blue-500 space-y-3" rel="prefetch" href="blog/posts/{slug}/"> -->
+			<h2>
+				{title}
+			</h2>
+			<!-- </a> -->
 
 			<p class="text-white text-base">
 				Outline: {outline || ''}<br />
@@ -97,7 +97,7 @@ import About from "../about.svelte";
 					{categories} &nbsp;
 				{/each}
 			</p>
-			<div class="post-text"></div>
+			<div class="post-text" />
 		</li>
 	{/each}
 </ul>
