@@ -51,8 +51,8 @@
 </script>
 
 <script>
-	import Counter from '$lib/Counter.svelte';
-	import About from '../about.svelte';
+	// import Counter from '$lib/Counter.svelte';
+	// import About from '../about.svelte';
 
 	export let posts;
 	export let tags;
